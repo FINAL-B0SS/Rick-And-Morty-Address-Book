@@ -1,0 +1,102 @@
+result-view {
+	match: Location (this)
+	
+	render {
+		layout {
+			section {
+				content {
+					hbox {
+						content {
+							if (exists(this.dimension)) {
+								vbox {
+									content {
+										single-line {
+											text {
+												value ("Dimension")
+												style (Legal)
+											}
+										}
+										single-line {
+											text {
+												value ("#{value(this.dimension)}")
+											}
+										}
+									}
+								}
+							}
+							if (exists(this.type)) {
+								vbox {
+									content {
+										single-line {
+											text {
+												value ("Type")
+												style (Legal)
+												
+											}
+										}
+										single-line {
+											text {
+												value ("#{value(this.type)}")
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					hbox {
+						content {
+							vbox {
+								content {
+									single-line {
+										text {
+											value (" ‏‏‎ ")
+										}
+									}
+								}
+							}
+							vbox {
+								halign (Center)
+								content {
+									single-line {
+										text {
+											value (Residents)
+											style (Title_M)
+										}
+									}
+								}
+							}
+							vbox {
+								content {
+									single-line {
+										text {
+											value (" ‏‏‎ ")
+										}
+									}
+								}
+							}
+						}
+					}
+					for-each (this.residents) {
+						as (resident) {
+							thumbnail-card {
+								image-url ("#{value(resident.image)}")
+								title-area {
+									slot1 {
+										text ("#{value(resident.name)}")
+									}
+								}
+                on-click {
+                  intent {
+                    goal: getCharacter
+                    value: $expr(resident)
+                  }
+                }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

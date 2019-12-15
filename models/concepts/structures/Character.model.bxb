@@ -1,0 +1,44 @@
+structure (Character) {
+  property (name) {
+    type (core.Text)
+    visibility (Private)
+    min (Optional) max (One)
+  }
+  property (status) {
+    type (core.Text)
+    visibility (Private)
+    min (Optional) max (One)
+  }
+  property (species) {
+    type (core.Text)
+    visibility (Private)
+    min (Optional) max (One)
+  }
+  property (type) {
+    type (core.Text)
+    visibility (Private)
+    min (Optional) max (One)
+  }
+  property (gender) {
+    type (core.Text)
+    visibility (Private)
+    min (Optional) max (One)
+  }
+  property (origin) {
+    type (Location)
+    min (Optional) max (One)
+  }
+  property (location) {
+    type (Location)
+    min (Optional) max (One)
+    visibility (Private)
+  }
+  property (image) {
+    type (core.Text)
+    min (Optional) max (One)
+  }
+  property (episode) {
+    type (Episode)
+    min (Required) max (Many)
+  }
+}

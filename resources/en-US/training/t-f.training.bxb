@@ -1,0 +1,5 @@
+train (t-fo3e90cm7mwnqhke7oip1mg79) {
+  utterance ("[g:getCharacter] (get morty)[v:Search]")
+  plan (Y2Bm0C3ISaxML8ovzUvRK8pMzo5PzEuJz80vKqmML8jIz0tNys/P1nPOSCxKTC5JLWIwIEZ5emoJQocWMTqCUxOLkjMYmBgYgZgBSDIygACUDwA=)
+  last-modified (1574900674303)
+}

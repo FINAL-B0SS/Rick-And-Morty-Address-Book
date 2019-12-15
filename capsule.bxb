@@ -1,0 +1,26 @@
+capsule {
+  id (playground.rick_and_morty_phonebook)
+  version (0.1.0)
+  format (3)
+  targets {
+    target (bixby-mobile-en-US)
+  }
+  runtime-flags {
+    concepts-inherit-super-type-features
+    modern-prompt-rejection
+    support-halt-effect-in-computed-inputs
+    use-input-views-for-selection-list-detail
+    modern-default-view-behavior
+    allow-dialogs-on-detail-pages
+    no-filtering-with-validation
+  }
+  capsule-imports {
+    import (viv.core) { as (core) }
+  }
+  store-countries {
+    all
+  }
+  store-sections {
+    section (GamesAndFun)
+  }
+}

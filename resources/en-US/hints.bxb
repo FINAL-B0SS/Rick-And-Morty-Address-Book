@@ -1,0 +1,7 @@
+hints {
+  uncategorized {
+    hint (Ask Rick and Morty Address Book to look up Morty.)
+    hint (With Rick and Morty Address Book get info on Rick Sanchez.)
+    hint (On Rick and Morty Address Book find Summer)
+  }
+}

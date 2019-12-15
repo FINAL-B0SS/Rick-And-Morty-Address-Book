@@ -1,0 +1,10 @@
+capsule-info {
+  developer-name (Final Boss)
+  display-name (Rick and Morty Address Book)
+  dispatch-name (Rick and Morty Address Book)
+  search-keywords {
+    keyword (Characters)
+  }
+  icon-asset (icon.png)
+  description ("__DESCRIPTION__")
+}

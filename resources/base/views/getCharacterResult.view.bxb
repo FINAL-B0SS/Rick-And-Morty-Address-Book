@@ -1,0 +1,296 @@
+result-view {
+	match: Character (this)
+	
+	render {
+		layout {
+			section {
+				content {
+					if (exists(this.image)) {
+						image {
+							url ("#{value(this.image)}")
+							object-fit (Contain)
+							lightbox-enabled (false)
+							
+						}
+					}
+					hbox {
+						content {
+							if (exists(this.name)) {
+								vbox {
+									halign (Start)
+									content {
+										single-line {
+											text {
+												value (Name: )
+												style (Detail_M_Soft)
+											}
+										}
+										single-line {
+											text {
+												value ("#{value(this.name)}")
+											}
+										}
+									}
+								}
+							}
+							if (exists(this.status)) {
+								vbox {
+									halign (Start)
+									content {
+										single-line {
+											text {
+												value (Status: )
+												style (Detail_M_Soft)
+											}
+										}
+										single-line {
+											text {
+												value ("#{value(this.status)}")
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					hbox {
+						content {
+							if (exists(this.species)) {
+								vbox {
+									halign (Start)
+									content {
+										single-line {
+											text {
+												value (Species: )
+												style (Detail_M_Soft)
+											}
+										}
+										single-line {
+											text {
+												value ("#{value(this.species)}")
+											}
+										}
+									}
+								}
+							}
+							if (exists(this.gender)) {
+								vbox {
+									halign (Start)
+									content {
+										single-line {
+											text {
+												value (Gender: )
+												style (Detail_M_Soft)
+											}
+										}
+										single-line {
+											text {
+												value ("#{value(this.gender)}")
+											}
+										}
+									}
+								}
+							}
+							if (exists(this.type)) {
+								vbox {
+									halign (Start)
+									content {
+										single-line {
+											text {
+												value (Type: )
+												style (Detail_M_Soft)
+											}
+										}
+										single-line {
+											text {
+												value ("#{value(this.type)}")
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					hbox {
+						content {
+							vbox {
+								content {
+									single-line {
+										text {
+											value (" ‏‏‎ ")
+										}
+									}
+								}
+							}
+							vbox {
+								halign (Center)
+								content {
+									single-line {
+										text {
+											value (Origin)
+											style (Title_M)
+										}
+									}
+								}
+							}
+							vbox {
+								content {
+									single-line {
+										text {
+											value (" ‏‏‎ ")
+										}
+									}
+								}
+							}
+						}
+					}
+					compound-card {
+						content {
+							if (exists(origin.name)) {
+								paragraph {
+									value ("Name: #{value(origin.name)}")
+								}
+							}
+							if (exists(origin.dimension)) {
+								paragraph {
+									value ("Dimension: #{value(origin.dimension)}")
+								}
+							}
+							if (exists(origin.type)) {
+								paragraph {
+									value ("Type: #{value(origin.type)}")
+								}
+							}
+						}
+						on-click {
+							intent {
+								goal: Location
+								value: $expr(origin)
+							}
+						}
+					}
+					hbox {
+						content {
+							vbox {
+								content {
+									single-line {
+										text {
+											value (" ‏‏‎ ")
+										}
+									}
+								}
+							}
+							vbox {
+								halign (Center)
+								content {
+									single-line {
+										text {
+											value (Location)
+											style (Title_M)
+										}
+									}
+								}
+							}
+							vbox {
+								content {
+									single-line {
+										text {
+											value (" ‏‏‎ ")
+										}
+									}
+								}
+							}
+						}
+					}
+					compound-card {
+						content {
+							if (exists(location.name)) {
+								paragraph {
+									value ("Name: #{value(location.name)}")
+								}
+							}
+							if (exists(location.dimension)) {
+								paragraph {
+									value ("Dimension: #{value(location.dimension)}")
+								}
+							}
+							if (exists(location.type)) {
+								paragraph {
+									value ("Type: #{value(location.type)}")
+								}
+							}
+						}
+						on-click {
+							intent {
+								goal: Location
+								value: $expr(location)
+							}
+						}
+					}
+					hbox {
+						content {
+							vbox {
+								content {
+									single-line {
+										text {
+											value (" ‏‏‎ ")
+										}
+									}
+								}
+							}
+							vbox {
+								halign (Center)
+								content {
+									single-line {
+										text {
+											value (Appears In)
+											style (Title_M)
+										}
+									}
+								}
+							}
+							vbox {
+								content {
+									single-line {
+										text {
+											value (" ‏‏‎ ")
+										}
+									}
+								}
+							}
+						}
+					}
+					for-each (this.episode) {
+						as (episode) {
+							compound-card {
+								content {
+									if (exists(episode.name)) {
+										paragraph {
+											value ("Title: #{value(episode.name)}")
+										}
+									}
+									if (exists(episode.number)) {
+										paragraph {
+											value ("Number: #{value(episode.number)}")
+										}
+									}
+									if (exists(episode.airDate)) {
+										paragraph {
+											value ("Air Date: #{value(episode.airDate)}")
+										}
+									}
+								}
+								on-click {
+									intent {
+										goal: Episode
+										value: $expr(episode)
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+structure (Location) {
+  property (name) {
+    type (core.Text)
+    visibility (Private)
+    min (Optional) max (One)
+  }
+  property (type) {
+    type (core.Text)
+    visibility (Private)
+    min (Optional) max (One)
+  }
+  property (dimension) {
+    type (core.Text)
+    visibility (Private)
+    min (Optional) max (One)
+  }
+  property (residents) {
+    type (CharacterShort)
+    min (Optional) max (Many)
+  }
+}

@@ -1,0 +1,6 @@
+dialog (Result) {
+	match: Character (this)
+	if (exists(this.name)) {
+		template("Here's all the info I have on #{value(this.name)}")
+	}
+}

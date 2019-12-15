@@ -1,0 +1,14 @@
+action (getCharacter) {
+  type (Search)
+  collect {
+    input (characterShort) {
+      type (CharacterShort)
+      min (Optional) max (One)
+    }
+    input (search) {
+      type (Search)
+      min (Optional) max (One)
+    }
+  }
+  output (Character)
+}

@@ -1,0 +1,21 @@
+structure (Episode) {
+  property (name) {
+    type (core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (airDate) {
+    type (core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (number) {
+    type (core.Text)
+    min (Required) max (One)
+    visibility (Private)
+  }
+  property (character) {
+    type (CharacterShort)
+    min (Optional) max (One)
+  }
+}

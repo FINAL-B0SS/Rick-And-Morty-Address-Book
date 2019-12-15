@@ -1,0 +1,4 @@
+dialog (Result) {
+  match: Episode (this)
+  template("Here's all the info I have on the episode #{value(this.name)}")
+}

@@ -1,0 +1,17 @@
+structure (CharacterShort) {
+  property (name) {
+    type (core.Text)
+    visibility (Private)
+    min (Required) max (One)
+  }
+  property (image) {
+    type (core.Text)
+    visibility (Private)
+    min (Required) max (One)
+  }
+  property (url) {
+    type (core.Text)
+    visibility (Private)
+    min (Optional) max (One)
+  }
+}

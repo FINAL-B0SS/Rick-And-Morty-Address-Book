@@ -1,0 +1,100 @@
+result-view {
+	match: Episode (this)
+	
+	render {
+		layout {
+			section {
+				content {
+					hbox {
+						content {
+							vbox {
+								content {
+									single-line {
+										text {
+											value ("Episode #")
+											style (Legal)
+										}
+									}
+									single-line {
+										text {
+											value ("#{value(this.number)}")
+										}
+									}
+								}
+							}
+							vbox {
+								content {
+									single-line {
+										text {
+											value ("Air Date")
+											style (Legal)
+											
+										}
+									}
+									single-line {
+										text {
+											value ("#{value(this.airDate)}")
+										}
+									}
+								}
+							}
+						}
+					}
+					hbox {
+						content {
+							vbox {
+								content {
+									single-line {
+										text {
+											value (" ‏‏‎ ")
+										}
+									}
+								}
+							}
+							vbox {
+								halign (Center)
+								content {
+									single-line {
+										text {
+											value (Characters)
+											style (Title_M)
+										}
+									}
+								}
+							}
+							vbox {
+								content {
+									single-line {
+										text {
+											value (" ‏‏‎ ")
+										}
+									}
+								}
+							}
+						}
+					}
+					for-each (this.character) {
+						as (character) {
+							if (exists(character)) {
+								thumbnail-card {
+									image-url ("#{value(character.image)}")
+									title-area {
+										slot1 {
+											text ("#{value(character.name)}")
+										}
+									}
+									on-click {
+										intent {
+											goal: getCharacter
+											value: $expr(character)
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
